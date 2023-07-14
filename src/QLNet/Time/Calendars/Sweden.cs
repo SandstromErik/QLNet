@@ -69,16 +69,15 @@ namespace QLNet
                 || (dd == em)
                 // Ascension Thursday
                 || (dd == em + 38)
-                // Whit Monday
-                || (dd == em + 49)
+                // Whit Monday was a holiday before 2005
+                || (dd == em + 49 && y < 2005)
                 // New Year's Day
                 || (d == 1  && m == Month.January)
                 // Epiphany
                 || (d == 6  && m == Month.January)
                 // May Day
                 || (d == 1  && m == Month.May)
-                // June 6 id National Day but is not a holiday.
-                // holiday since 2005
+                // June 6 is National Day which is a holiday since 2005
                 || (d == 6 && m == Month.June && y >= 2005)
                 // Midsummer Eve (Friday between June 19-25)
                 || (w == DayOfWeek.Friday && (d >= 19 && d <= 25) && m == Month.June)
